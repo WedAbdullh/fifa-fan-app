@@ -1,8 +1,10 @@
+// App.test.js
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import PlayZone from './PlayZone';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders Play Zone title', () => {
+  render(<PlayZone />);
+  const titleElement = screen.getByText(/The Play Zone/i);
+  expect(titleElement).toBeInTheDocument();
 });
+
