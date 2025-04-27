@@ -27,7 +27,7 @@ const leagueQuestions = {
   ],
 };
 
-function Scoreboard({ answers, total, time }) {
+function Scoreboard({ answers, total, currentTime, completionTime }) {
   const correct = answers.filter(ans => ans.status === 'correct').length;
 
   return (
@@ -36,19 +36,18 @@ function Scoreboard({ answers, total, time }) {
         <div className="progress-side">
           <span className="progress-label">Your progress</span>
           <div className="progress-bar">
-            {Array.from({ length: 5 }).map((_, i) => {
+            {Array.from({ length: total }).map((_, i) => {
               const status = answers[i]?.status || 'pending';
-              return (
-                <div
-                  key={i}
-                  className={`progress-segment ${status}`}
-                ></div>
-              );
+              return <div key={i} className={`progress-segment ${status}`}></div>;
             })}
           </div>
         </div>
         <div className="time-center">
-          <p className="completion-time">Time: {time} seconds</p>
+          <p className="completion-time">
+            {completionTime !== null
+              ? `Time: ${completionTime} seconds`
+              : `Elapsed Time: ${currentTime} seconds`}
+          </p>
           {correct === total && <p className="badge">🏆 Pro Level Unlocked!</p>}
         </div>
         <div className="rank-card">
@@ -62,35 +61,46 @@ function Scoreboard({ answers, total, time }) {
 
 export default function WhoAmI() {
   const { leagueName } = useParams();
-const decodedLeague = decodeURIComponent(leagueName); // ✅ decode "Argentine%20league" to "Argentine league"
-const league = decodeURIComponent(leagueName);
-const questions = leagueQuestions[decodedLeague] || [];
-
+  const decodedLeague = decodeURIComponent(leagueName);
+  const league = decodedLeague;
+  const questions = leagueQuestions[decodedLeague] || [];
 
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState(null);
   const [answers, setAnswers] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [startTime] = useState(Date.now());
+  const [startTime, setStartTime] = useState(null);
+  const [currentTime, setCurrentTime] = useState(0);
   const [completionTime, setCompletionTime] = useState(null);
 
-  const current = questions[index];
   const quizRef = useRef(null);
+  const current = questions[index];
+
+  useEffect(() => {
+    const now = Date.now();
+    setStartTime(now);
+
+    const timer = setInterval(() => {
+      setCurrentTime(Math.floor((Date.now() - now) / 1000));
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    if (index >= questions.length && startTime) {
+      const endTime = Date.now();
+      setCompletionTime(Math.floor((endTime - startTime) / 1000));
+    }
+  }, [index, startTime, questions.length]);
 
   useEffect(() => {
     if (!current) return;
     setLoading(true);
     const img = new Image();
-    img.src = current.image;
+    img.src = process.env.PUBLIC_URL + current.image;
     img.onload = () => setLoading(false);
   }, [current]);
-
-  useEffect(() => {
-    if (index >= questions.length) {
-      const endTime = Date.now();
-      setCompletionTime(Math.floor((endTime - startTime) / 1000));
-    }
-  }, [index, startTime, questions.length]);
 
   const handleSubmit = () => {
     if (!current) return;
@@ -117,14 +127,14 @@ const questions = leagueQuestions[decodedLeague] || [];
         <Hero
           headline={`Guess the ${league} Player`}
           sub=""
-          buttonLabel="Start Random Quiz"
-          background="/whoami.png"
+          buttonLabel="Start now!"
+          background={process.env.PUBLIC_URL + "/whoami.png"}
         />
         <section className="quiz-end">
           <h2>🎉 Quiz Complete!</h2>
           <p>Score: {answers.filter(a => a.status === 'correct').length} / {questions.length}</p>
         </section>
-        <Scoreboard answers={answers} total={questions.length} time={completionTime || 0} />
+        <Scoreboard answers={answers} total={questions.length} currentTime={currentTime} completionTime={completionTime} />
         <Footer />
       </div>
     );
@@ -141,7 +151,7 @@ const questions = leagueQuestions[decodedLeague] || [];
         headline={`Guess the ${league} Player`}
         sub=""
         buttonLabel="Start now!"
-        background="/whoami.png"
+        background={process.env.PUBLIC_URL + "/whoami.png"}
         onClick={scrollToQuiz}
       />
 
@@ -167,13 +177,13 @@ const questions = leagueQuestions[decodedLeague] || [];
           </div>
           <div className="question-right">
             <div className="image-placeholder">
-              <img src={current.image} alt="quiz" />
+              <img src={process.env.PUBLIC_URL + current.image} alt="quiz" />
             </div>
           </div>
         </div>
       </section>
 
-      <Scoreboard answers={answers} total={questions.length} time={completionTime || 0} />
+      <Scoreboard answers={answers} total={questions.length} currentTime={currentTime} completionTime={completionTime} />
       <Footer />
     </div>
   );
