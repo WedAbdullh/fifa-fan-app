@@ -1,7 +1,7 @@
 // src/GameSelectionPage.js
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Navbar, Hero, Footer } from './PlayZone';
+import { Hero, LeagueCard } from './PlayZone';
 import './PlayZone.css'; 
 
 function GameCard({ title, description, imgSrc, route }) {
@@ -29,7 +29,6 @@ export default function GameSelectionPage() {
 
   return (
     <div>
-      <Navbar />
       <Hero
         headline="Can you call yourself a real football fan?"
         sub="Find out now!"
@@ -37,6 +36,7 @@ export default function GameSelectionPage() {
         background={process.env.PUBLIC_URL + "/stadium.jpg"}
         onClick={scrollToPlayZone}
       />
+
       <section className="play-zone" ref={playZoneRef}>
         <div className="game-grid">
           <GameCard title="Who Am I ?" description="Can you guess the player from their club badges?" imgSrc="whoami.png" route="/leagues" />
@@ -44,7 +44,6 @@ export default function GameSelectionPage() {
           <GameCard title="Who said it" description="Guess the football legend" imgSrc="whosaidit.png" route="/quotes" />
         </div>
       </section>
-      <Footer />
     </div>
   );
 }

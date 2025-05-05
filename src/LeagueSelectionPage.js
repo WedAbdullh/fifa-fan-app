@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Navbar, Hero, Footer, LeagueCard } from './PlayZone';
+import { Hero, LeagueCard } from './PlayZone';
 
 export default function LeagueSelectionPage() {
   const navigate = useNavigate();
@@ -23,7 +23,6 @@ export default function LeagueSelectionPage() {
 
   return (
     <div>
-      <Navbar />
       <Hero headline="Guess the football player " sub="Pick a challenge" background={process.env.PUBLIC_URL + "/whoami.png"} 
        buttonLabel="Let's Go!"      
        onClick={scrollToLeagues}
@@ -43,7 +42,6 @@ export default function LeagueSelectionPage() {
         </div>
         
       </section>
-      <Footer />
     </div>
   );
 }

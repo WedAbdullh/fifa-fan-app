@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
-import { Navbar, Hero, Footer } from './PlayZone';
+import { Hero } from './PlayZone';
 import './PlayZone.css';
 
 const leagueQuestions = {
@@ -123,7 +123,6 @@ export default function WhoAmI() {
   if (index >= questions.length) {
     return (
       <div>
-        <Navbar />
         <Hero
           headline={`Guess the ${league} Player`}
           sub=""
@@ -135,7 +134,6 @@ export default function WhoAmI() {
           <p>Score: {answers.filter(a => a.status === 'correct').length} / {questions.length}</p>
         </section>
         <Scoreboard answers={answers} total={questions.length} currentTime={currentTime} completionTime={completionTime} />
-        <Footer />
       </div>
     );
   }
@@ -146,7 +144,6 @@ export default function WhoAmI() {
 
   return (
     <div>
-      <Navbar />
       <Hero
         headline={`Guess the ${league} Player`}
         sub=""
@@ -184,7 +181,6 @@ export default function WhoAmI() {
       </section>
 
       <Scoreboard answers={answers} total={questions.length} currentTime={currentTime} completionTime={completionTime} />
-      <Footer />
     </div>
   );
 }
