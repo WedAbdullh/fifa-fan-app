@@ -5,7 +5,7 @@ This is a **fan-made web application** for the FIFA World Cup 2034 hosted in **S
 
 ---
 
-## 🌐 Live Features
+## 🌐  Features
 
 - ⚽ **Live FIFA news** using NewsAPI  
 - 🌌 **Countdown timer** to the World Cup  
