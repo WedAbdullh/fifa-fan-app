@@ -45,26 +45,37 @@ nvm use 18
 
 Make sure you have **Node.js** and **npm** installed.
 
-### 1. Clone the repository
+# 1. Install AMPPS (https://www.ampps.com/downloads)
+
+# 2. Place the 'fifa-auth' folder in the following directory:
+#    (This is the web root for AMPPS on macOS)
+
+mv ~/Downloads/fifa-auth /Applications/AMPPS/www/
+
+# 3. Your PHP files should now be accessible at:
+#    http://localhost/fifa-auth/login.php
+#    http://localhost/fifa-auth/signup.php
+
+### 4. Clone the repository
 
 ```bash
 git clone https://github.com/WedAbdullh/fifa-fan-app.git
 cd fifa-fan-app 
 ```
 
-### 2. Install dependencies
+### 5. Install dependencies
 
 ```bash
 npm install
 ```
-### 3. Start the app locally
+### 6. Start the app locally
 
 ```bash
 npm start
 ```
 
 The app will run at:
-http://localhost:3000
+http://localhost:3000/
 
 ---
 
