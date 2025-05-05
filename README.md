@@ -45,16 +45,16 @@ nvm use 18
 
 Make sure you have **Node.js** and **npm** installed.
 
-# 1. Install AMPPS (https://www.ampps.com/downloads)
+## 1. Install AMPPS (https://www.ampps.com/downloads)
 
-# 2. Place the 'fifa-auth' folder in the following directory:
-#    (This is the web root for AMPPS on macOS)
+## 2. Place the 'fifa-auth' folder in the following directory:
+    (This is the web root for AMPPS on macOS)
 
 mv ~/Downloads/fifa-auth /Applications/AMPPS/www/
 
-# 3. Your PHP files should now be accessible at:
-#    http://localhost/fifa-auth/login.php
-#    http://localhost/fifa-auth/signup.php
+## 3. Your PHP files should now be accessible at:
+    http://localhost/fifa-auth/login.php
+    http://localhost/fifa-auth/signup.php
 
 ### 4. Clone the repository
 
