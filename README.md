@@ -49,7 +49,7 @@ Make sure you have **Node.js** and **npm** installed.
 
 
 ### 2. Place the 'fifa-auth' folder in the following directory(macOS):
-    mv ~/Downloads/fifa-auth /Applications/AMPPS/www/
+    mv ~/Applications/AMPPS/www/
     
 
 ### 3. Your PHP files should now be accessible at:
