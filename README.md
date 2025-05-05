@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# FIFA 2034 Fan Portal App ⚽
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a **fan-made web application** for the FIFA World Cup 2034 hosted in **Saudi Arabia**. The app provides an engaging experience for users to explore host cities, stadiums, match highlights, player information, sustainability initiatives, and more.  
+> Built as part of the **CPIT405 Web Development** course at King Abdulaziz University under the supervision of **Dr. Rania Alhazmi**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🌐 Live Features
 
-### `npm start`
+- ⚽ **Live FIFA news** using NewsAPI  
+- 🌌 **Countdown timer** to the World Cup  
+- 🌿 **Sustainability section** about eco-friendly stadiums  
+- 🧠 **Mini-games** (e.g., Who Am I?)  
+- 📸 **Visual and media-rich design**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
+## ⚠️ Prerequisites
+> Make sure you have **Node.js (v16 or v18)** and **npm** installed on your machine.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1. To check if you have them installed:
+```bash
+node -v
+npm -v
+```
+If you see version numbers, you're good to go. If not or if the versions are incompatible:
 
-### `npm test`
+- Download both from: https://nodejs.org/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Use the LTS version (Recommended)
 
-### `npm run build`
+### 2. Recommended Versions:
+This app works best with:
+- Node.js v16.x.x or v18.x.x
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- npm v8.x.x
+> ❗ If you're using a much newer Node.js version (like v20+), some dependencies might break. You can switch versions using nvm:
+```bash
+nvm install 18
+nvm use 18
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ⚒️ Build & Run Instructions
 
-### `npm run eject`
+Make sure you have **Node.js** and **npm** installed.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 1. Clone the repository
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/WedAbdullh/fifa-fan-app.git
+cd fifa-fan-app 
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 2. Install dependencies
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm install
+```
+### 3. Start the app locally
 
-## Learn More
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The app will run at:
+http://localhost:3000
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 👥 Credits
+> 🚀 Proudly built by an amazing team of talented students at KAU!
+- Rama Alguthmi  
+- Wed Abdullah  
+- Taif Alsaadi  
+- Joud Alharbi  
+- Amjad Bajaber
+  
+---
+## Resources
+- News provided by NewsAPI.org
+- Built using ReactJS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
