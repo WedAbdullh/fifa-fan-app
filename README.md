@@ -3,6 +3,8 @@
 This is a **fan-made web application** for the FIFA World Cup 2034 hosted in **Saudi Arabia**. The app provides an engaging experience for users to explore host cities, stadiums, match highlights, player information, sustainability initiatives, and more.  
 > Built as part of the **CPIT405 Web Development** course at King Abdulaziz University under the supervision of **Dr. Rania Alhazmi**.
 
+####Screen Recording of the website:
+https://drive.google.com/file/d/1wAztjgf4PKc4OfIIl2OnXpgz6w_6vkYx/view?usp=drive_link
 ---
 
 ## 🌐  Features
